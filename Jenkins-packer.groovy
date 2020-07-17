@@ -65,7 +65,7 @@ def slavePodTemplate = """
                         sh 'packer validate jenkins.json'
                     }
                     stage("Packer Build") {
-                        println("Selected AWS region is: ${aws_region}")
+                        println("Selected AWS region is: ${params.aws_region}")
                         println('Building the packer.')
                         sh """
                         #!/bin/bash
