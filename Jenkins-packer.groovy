@@ -55,7 +55,7 @@ def slavePodTemplate = """
         stage("Pull SCM") {
             git 'https://github.com/sevilbeyza/jenkins-packer.git'
         }-
-        dir('class4/packer/') {
+        dir('packer/') {
             container('packer') {
                 withCredentials([usernamePassword(credentialsId: 'packer-build-creds', passwordVariable: 'AWS_SECRET_KEY', usernameVariable: 'AWS_ACCESS_KEY')]) {
                     stage("Packer Validate") {
