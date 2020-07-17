@@ -69,7 +69,7 @@ def slavePodTemplate = """
                         println('Building the packer.')
                         sh """
                         #!/bin/bash
-                        export AWS_REGION=${aws_region}
+                        export AWS_REGION=${params.aws_region}
                         packer build jenkins.json
                         """
                     }
